@@ -1,7 +1,7 @@
-# Личный проект «Код и Магия» [![Build status][travis-image]][travis-url] [![Dependency status][dependency-image]][dependency-url]
+﻿# Личный проект «Код и Магия» [![Build status][travis-image]][travis-url] [![Dependency status][dependency-image]][dependency-url]
 
 * Студент: [Валентина Кравченко](https://up.htmlacademy.ru/javascript/6/user/150859).
-* Наставник: `Неизвестно`.
+* Наставник: 'myself'
 
 ---
 
