@@ -395,18 +395,23 @@ window.Game = (function() {
      * Отрисовка экрана паузы.
      */
     _drawPauseScreen: function() {
+      // отрисовка канваса Каждое сообщение должно быть отрисовано на холсте канваса this.ctx на многоугольнике любой формы залитым белым цветом #FFFFFF. Это может быть как правильный многоугольник, нарисованный методом fillRect, так и неправильный нарисованный с помощью методов beginPath, moveTo, closePath и fill.
+      var canvas =
+      // отрисовка тени  Под сообщением должна располагаться тень: многоугольник такой же формы, залитый цветом rgba(0, 0, 0, 0.7) (полупрозрачный чёрный), смещённый относительно белого на 10px вниз и вправо.
+      
+      // текст победы каждая новая строчка должна быть отрисована новым вызовом метода fillText или strokeText. Оптимальным способом является задание текста в массиве и итерирование по нему для вывода сообщения целиком.
       switch (this.state.currentStatus) {
         case Verdict.WIN:
-          console.log('you have won!');
+          console.log('Я победил!');
           break;
         case Verdict.FAIL:
-          console.log('you have failed!');
+          console.log('Я не победил!');
           break;
         case Verdict.PAUSE:
-          console.log('game is on pause!');
+          console.log('Нажми пробел, чтобы продолжить увлекательные приключения!');
           break;
         case Verdict.INTRO:
-          console.log('welcome to the game! Press Space to start');
+          console.log('Надоело 3D, нейросети и покемоны? Хочешь почувствовать себя настоящим Волшебником? Скорее жми пробел!');
           break;
       }
     },
