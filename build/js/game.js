@@ -395,23 +395,40 @@ window.Game = (function() {
      * Отрисовка экрана паузы.
      */
     _drawPauseScreen: function() {
-      // отрисовка канваса Каждое сообщение должно быть отрисовано на холсте канваса this.ctx на многоугольнике любой формы залитым белым цветом #FFFFFF. Это может быть как правильный многоугольник, нарисованный методом fillRect, так и неправильный нарисованный с помощью методов beginPath, moveTo, closePath и fill.
-      var canvas =
-      // отрисовка тени  Под сообщением должна располагаться тень: многоугольник такой же формы, залитый цветом rgba(0, 0, 0, 0.7) (полупрозрачный чёрный), смещённый относительно белого на 10px вниз и вправо.
-      
-      // текст победы каждая новая строчка должна быть отрисована новым вызовом метода fillText или strokeText. Оптимальным способом является задание текста в массиве и итерирование по нему для вывода сообщения целиком.
+      // отрисовка тени
+      this.ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
+      this.ctx.fillRect(330, 140, 220, 110);
+      // отрисовка канваса
+      this.ctx.fillStyle = '#FFFFFF';
+      this.ctx.fillRect(320, 130, 220, 110);
+      // массив текста сообщения
+      var verdictText = ['Я победил!', 'Я не победил!', 'Нажми пробел, ', 'чтобы продолжить', ' увлекательные', ' приключения!', 'Надоело 3D?', 'Почувствуй себя', 'настоящим Волшебником,', 'жми пробел!'];
       switch (this.state.currentStatus) {
         case Verdict.WIN:
-          console.log('Я победил!');
+          this.ctx.fillStyle = '#000000';
+          this.ctx.font = '16px PT Mono';
+          this.ctx.fillText(verdictText['0'], 330, 150);
           break;
         case Verdict.FAIL:
-          console.log('Я не победил!');
+          this.ctx.fillStyle = '#000000';
+          this.ctx.font = '16px PT Mono';
+          this.ctx.fillText(verdictText['1'], 330, 150);
           break;
         case Verdict.PAUSE:
-          console.log('Нажми пробел, чтобы продолжить увлекательные приключения!');
+          this.ctx.fillStyle = '#000000';
+          this.ctx.font = '16px PT Mono';
+          this.ctx.fillText(verdictText['2'], 330, 150);
+          this.ctx.fillText(verdictText['3'], 330, 170);
+          this.ctx.fillText(verdictText['4'], 330, 190);
+          this.ctx.fillText(verdictText['5'], 330, 210);
           break;
         case Verdict.INTRO:
-          console.log('Надоело 3D, нейросети и покемоны? Хочешь почувствовать себя настоящим Волшебником? Скорее жми пробел!');
+          this.ctx.fillStyle = '#000000';
+          this.ctx.font = '16px PT Mono';
+          this.ctx.fillText(verdictText['6'], 330, 150);
+          this.ctx.fillText(verdictText['7'], 330, 170);
+          this.ctx.fillText(verdictText['8'], 330, 190);
+          this.ctx.fillText(verdictText['9'], 330, 210);
           break;
       }
     },
