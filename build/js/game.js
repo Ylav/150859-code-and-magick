@@ -395,22 +395,43 @@ window.Game = (function() {
      * Отрисовка экрана паузы.
      */
     _drawPauseScreen: function() {
+       // отрисовка тени
+      this.ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
+      this.ctx.fillRect(330, 140, 220, 110);
+       // отрисовка канваса
+      this.ctx.fillStyle = '#FFFFFF';
+      this.ctx.fillRect(320, 130, 220, 110);
+       // массив текста сообщения
+      var verdictText = ['Я победил!', 'Я не победил!', 'Нажми пробел, ', 'чтобы продолжить', ' увлекательные', ' приключения!', 'Надоело 3D?', 'Почувствуй себя', 'настоящим Волшебником,', 'жми пробел!'];
       switch (this.state.currentStatus) {
         case Verdict.WIN:
-          console.log('you have won!');
+          this.ctx.fillStyle = '#000000';
+          this.ctx.font = '16px PT Mono';
+          this.ctx.fillText(verdictText['0'], 330, 150);
           break;
         case Verdict.FAIL:
-          console.log('you have failed!');
+          this.ctx.fillStyle = '#000000';
+          this.ctx.font = '16px PT Mono';
+          this.ctx.fillText(verdictText['1'], 330, 150);
           break;
         case Verdict.PAUSE:
-          console.log('game is on pause!');
+          this.ctx.fillStyle = '#000000';
+          this.ctx.font = '16px PT Mono';
+          this.ctx.fillText(verdictText['2'], 330, 150);
+          this.ctx.fillText(verdictText['3'], 330, 170);
+          this.ctx.fillText(verdictText['4'], 330, 190);
+          this.ctx.fillText(verdictText['5'], 330, 210);
           break;
         case Verdict.INTRO:
-          console.log('welcome to the game! Press Space to start');
+          this.ctx.fillStyle = '#000000';
+          this.ctx.font = '16px PT Mono';
+          this.ctx.fillText(verdictText['6'], 330, 150);
+          this.ctx.fillText(verdictText['7'], 330, 170);
+          this.ctx.fillText(verdictText['8'], 330, 190);
+          this.ctx.fillText(verdictText['9'], 330, 210);
           break;
       }
     },
-
     /**
      * Предзагрузка необходимых изображений для уровня.
      * @param {function} callback
