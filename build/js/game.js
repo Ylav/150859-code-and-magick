@@ -395,7 +395,6 @@ window.Game = (function() {
      * Отрисовка экрана паузы.
      */
     _drawPauseScreen: function() {
-<<<<<<< HEAD
        // отрисовка тени
       this.ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
       this.ctx.fillRect(330, 140, 220, 110);
@@ -403,15 +402,6 @@ window.Game = (function() {
       this.ctx.fillStyle = '#FFFFFF';
       this.ctx.fillRect(320, 130, 220, 110);
        // массив текста сообщения
-=======
-      // отрисовка тени
-      this.ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
-      this.ctx.fillRect(330, 140, 220, 110);
-      // отрисовка канваса
-      this.ctx.fillStyle = '#FFFFFF';
-      this.ctx.fillRect(320, 130, 220, 110);
-      // массив текста сообщения
->>>>>>> 292a6a3fa87ca423c48ccc5a39e6682f71f32977
       var verdictText = ['Я победил!', 'Я не победил!', 'Нажми пробел, ', 'чтобы продолжить', ' увлекательные', ' приключения!', 'Надоело 3D?', 'Почувствуй себя', 'настоящим Волшебником,', 'жми пробел!'];
       switch (this.state.currentStatus) {
         case Verdict.WIN:
