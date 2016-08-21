@@ -15,13 +15,13 @@ function getMessage(a, b) {
   if (typeof a === 'number') {
     return ('Я прыгнул на ' + a * 100 + ' сантиметров');
   }
-  if (Array.isArray(a) === true && Array.isArray(b) === true) {
+  if (Array.isArray(a) && Array.isArray(b)) {
     for (var i = 0; i < a.length; i++) {
       numberOfSteps += a[i] * b[i];
     }
     return ('Я прошёл ' + numberOfSteps + ' метров');
   }
-  if (Array.isArray(a) === true && Array.isArray(b) === false) {
+  if (Array.isArray(a)) {
     for (var j = 0; j < a.length; j++) {
       distancePath += a[j];
     }
